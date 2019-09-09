@@ -12,10 +12,16 @@ let config = {
     resolve: {
         extensions: ['.js', '.ts', '.vue']
     },
+    devServer: {
+        noInfo: true
+    },
     module: {
         rules: [{
             test: /\.ts$/,
-            loader: 'ts-loader'
+            loader: 'ts-loader',
+            options: {
+                appendTsSuffixeTo: [/\.vue$/]
+            }
         },
         {
             test: /\.vue$/,
