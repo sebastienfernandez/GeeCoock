@@ -1,20 +1,22 @@
 <template>
-    <div>Bienvennue dans GeeCoock</div>
+    <div>Bienvennue dans GeeCoock<br>
+        Je me mets à compter, {{ number }}
+    </div>
 </template>
 
 <script lang="ts">
     // importer Vue pour que Typescript puisse le gérer
-    import Vue from 'vue'
+    import {Vue, Component} from 'vue-property-decorator'
 
-    export default {
-        data () {
-            return {
-                number: 0
-            }
-        },
+    @Component({})
+
+    export default class App extends Vue {
+        
+        number: number = 0
+            
         mounted() {
             window.setInterval(() => {
-                this.number++;
+                this.number++
             }, 1000)
         }
     }
