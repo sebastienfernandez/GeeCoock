@@ -2,6 +2,8 @@ const path = require('path')
 
 const webpack = require('webpack')
 
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 let config = {
     entry: './src/main.ts',
     output: {
@@ -20,7 +22,7 @@ let config = {
             test: /\.ts$/,
             loader: 'ts-loader',
             options: {
-                appendTsSuffixeTo: [/\.vue$/]
+                appendTsSuffixTo: [/\.vue$/]
             }
         },
         {
@@ -28,7 +30,12 @@ let config = {
             loader: 'vue-loader'
         }
         ]
-    }
+    },
+    plugins: [
+        // make sure to include the plugin!
+        new VueLoaderPlugin()
+    ]
 }
+
 
 module.exports = config

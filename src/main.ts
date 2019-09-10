@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 
 new Vue({
-    el: document.querySelector('#app') as Element,
+    el: '#app',
     components: {App},
     render(h) {
         return h('App')
