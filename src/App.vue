@@ -3,7 +3,19 @@
 </template>
 
 <script lang="ts">
-    export default {
+    // importer Vue pour que Typescript puisse le gérer
+    import Vue from 'vue'
 
+    export default {
+        data () {
+            return {
+                number: 0
+            }
+        },
+        mounted() {
+            window.setInterval(() => {
+                this.number++;
+            }, 1000)
+        }
     }
 </script>
