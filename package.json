@@ -23,6 +23,7 @@
   "dependencies": {
     "ts-vue-loader": "^1.0.1",
     "vue": "^2.6.10",
+    "vue-loader": "^15.4.2",
     "vue-property-decorator": "^8.2.2"
   }
 }

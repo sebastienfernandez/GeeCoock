@@ -18,25 +18,26 @@ let config = {
         noInfo: true
     },
     module: {
-        rules: [{
+        rules: [
+        {
             test: /\.ts$/,
-            use: [{
-                loader: 'ts-vue-loader'
-            },{
-                loader: 'ts-loader',
-                options: {
-                    appendTsSuffixTo: [/\.vue$/]
-                }
-            }]
+            loader: 'ts-loader',
+            options: {
+                appendTsSuffixTo: [/\.vue$/]
+            }
+        },
+        {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+        }]
             
-        }
+        },
+        plugins: [
+            // make sure to include the plugin!
+            new VueLoaderPlugin()
         ]
-    },
-    plugins: [
-        // make sure to include the plugin!
-        new VueLoaderPlugin()
-    ]
-}
+        
+    }
 
 
 module.exports = config
