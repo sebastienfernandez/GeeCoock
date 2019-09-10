@@ -21,6 +21,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "ts-vue-loader": "^1.0.1",
     "vue": "^2.6.10",
     "vue-property-decorator": "^8.2.2"
   }

@@ -20,14 +20,15 @@ let config = {
     module: {
         rules: [{
             test: /\.ts$/,
-            loader: 'ts-loader',
-            options: {
-                appendTsSuffixTo: [/\.vue$/]
-            }
-        },
-        {
-            test: /\.vue$/,
-            loader: 'vue-loader'
+            use: [{
+                loader: 'ts-vue-loader'
+            },{
+                loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/]
+                }
+            }]
+            
         }
         ]
     },
