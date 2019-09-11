@@ -1,5 +1,5 @@
 {
-  "name": "GeeCoock",
+  "name": "Cantina",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -21,6 +21,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "ts-vue-loader": "^1.0.1",
     "vue": "^2.6.10",
     "vue-loader": "^15.4.2",
