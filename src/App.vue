@@ -93,8 +93,11 @@
 
         mounted() {
             axios
-                .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+                .get('http://localhost:9000/api/recipes')
                 .then(response => (this.info = response))
+                .catch(error => {
+                    this.info = error
+                })
         }
     }
 
