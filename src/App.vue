@@ -48,19 +48,30 @@
             </section>
             <section>
                 <div class="card">
-                    <img src="" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Pain elfique</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">Pain elfique</h5>
+                    <div class="card-top">
+                        <img 
+                            src="http://img.over-blog-kiwi.com/0/23/26/24/20140323/ob_32565f_img-3155.jpg" 
+                            class="card-img-top" 
+                            style="width: 150px; height: 150px"
+                            alt="lambas"
+                        />
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <span>{{ nbrPersonn }} {{ personn }}</span>
+                            <span>30 min.</span>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                    <div class="card-bottom">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -68,8 +79,8 @@
     </div>
 </template>
 
-<style>
-
+<style scoped>
+ 
 </style>
     
 
@@ -86,6 +97,10 @@
         @Prop() start!: number
 
         number: number = 0
+
+        nbrPersonn: number = 2
+
+        personn: string = "personnes"
 
         lessquarter: string = "<15min."
 
