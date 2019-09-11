@@ -36,9 +36,11 @@
                         Temps de préparation
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <button class="dropdown-item" href="#">gg</button>
-                        <button class="dropdown-item" href="#">Another action</button>
-                        <button class="dropdown-item" href="#">Something else here</button>
+                        <button class="dropdown-item" href="#">{{ lessquarter }}</button>
+                        <button class="dropdown-item" href="#">15 à 30 min.</button>
+                        <button class="dropdown-item" href="#">30min. à 1h</button>
+                        <button class="dropdown-item" href="#">1 à 2h</button>
+                        <button class="dropdown-item" href="#">plus de 2h</button>
                     </div>
                     </div>
                 </div>
@@ -65,6 +67,8 @@
         @Prop() start!: number
 
         number: number = 0
+
+        lessquarter: string = "<15min."
 
         mounted() {
             window.setInterval(() => {
