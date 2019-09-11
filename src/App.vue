@@ -2,6 +2,7 @@
     <div>
         <header>
             <h1>Avec la cantina, partagez vos recettes issues de la culture populaire !</h1>
+            <h2>{{ info }}</h2>
             <div class="md-form active-pink active-pink-2 mb-3 mt-0">
                 <input class="form-control" type="text" placeholder="Search" aria-label="Search">
             </div>
@@ -45,7 +46,24 @@
                     </div>
                 </div>
             </section>
-            <section></section>
+            <section>
+                <div class="card">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Pain elfique</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 </template>
@@ -59,6 +77,7 @@
 <script lang="ts">
     // importer Vue pour que Typescript puisse le gérer
     import {Vue, Component, Prop} from 'vue-property-decorator'
+    import axios from 'axios'
 
     @Component({})
 
@@ -70,10 +89,14 @@
 
         lessquarter: string = "<15min."
 
+        info: any = null
+
         mounted() {
-            window.setInterval(() => {
-                this.number++
-            }, 1000)
+            axios
+                .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+                .then(response => (this.info = response))
         }
     }
+
+    
 </script>
