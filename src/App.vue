@@ -1,10 +1,20 @@
 <template>
     <div>
-        <header>
-            <h1>Avec la cantina, partagez vos recettes issues de la culture populaire !</h1>
-            <h2>{{ info }}</h2>
+        <header
+            v-bind:style="{
+                display: 'flex', 
+                justifyContent: 'space-around',
+                marginTop: '2%'
+            }"
+        >
+            <h1
+                v-bind:style="{fontSize: '1.5em'}"
+            >
+                Avec la cantina, partagez vos recettes issues de la culture populaire !
+            </h1>
+            <!--<h2>{{ info }}</h2>-->
             <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-                <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                <input class="form-control" type="text" placeholder="Tapez votre recette..." aria-label="Search">
             </div>
         </header>
         <main>
@@ -47,9 +57,15 @@
                 </div>
             </section>
             <section>
-                <div class="card">
+                <div 
+                    class="card"
+                    v-bind:style="{width: '400px'}"
+                >
                     <h5 class="card-title">Pain elfique</h5>
-                    <div class="card-top">
+                    <div 
+                        class="card-top"
+                        v-bind:style="{display: 'flex'}"
+                    >
                         <img 
                             src="http://img.over-blog-kiwi.com/0/23/26/24/20140323/ob_32565f_img-3155.jpg" 
                             class="card-img-top" 
@@ -57,21 +73,17 @@
                             alt="lambas"
                         />
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">La recette du pain elfique, bla bla bla...</p>
                             <span>{{ nbrPersonn }} {{ personn }}</span>
                             <span>30 min.</span>
                         </div>
                     </div>
-                    <div class="card-bottom">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
+                    <div 
+                        class="card-body"
+                        v-bind:style="{display: 'flex', justifyContent: 'space-between'}"
+                    >
+                        <button type="button" class="btn btn-warning">Modifier</button>
+                        <img src="/assets/trashscan.svg" alt="supression" width="40px" height="40px" />
                     </div>
                 </div>
             </section>
@@ -95,6 +107,7 @@
     export default class App extends Vue {
 
         @Prop() start!: number
+
 
         number: number = 0
 
